@@ -1,13 +1,9 @@
+import { TodoFilters } from './components/todo/TodoFilters'
 import { CompletedTodos } from './features/completed/CompletedTodos'
 import { UncompletedTodos } from './features/uncompleted/UncompletedTodos'
 import { useTodos } from './hooks/useTodos'
 
 function App() {
-  const { state } = useTodos()
-
-  console.log(state.todos)
-  console.log(state.users)
-
   return (
     <div >
       <h1>Todo App</h1>
@@ -32,6 +28,7 @@ function App() {
           <h3>{todo.title}</h3>
         </div>
       ))} */}
+      <TodoFilters />
 
       <div className="todos">
         <UncompletedTodos />

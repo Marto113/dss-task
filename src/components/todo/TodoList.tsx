@@ -14,7 +14,7 @@ export function TodoList({ todos, title }: Props) {
             <div className="todos--list-wrapper">
                 <div className="todos--list">
                     {todos.map(todo => (
-                        <TodoItem todo={todo} />
+                        <TodoItem key={todo.id} todo={todo} />
                     ))}
                 </div>
                 <div className="todos--fade" />

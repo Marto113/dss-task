@@ -29,6 +29,9 @@ type Action =
       type: 'TOGGLE_TODO'
       payload: number
       }
+  | { type: 'SET_FILTER'; payload: number | null }
+  | { type: 'SET_SORT_UNCOMPLETED'; payload: 'asc' | 'desc' }
+  | { type: 'SET_SORT_COMPLETED'; payload: 'asc' | 'desc' }
 
 function reducer(state: TodoState, action: Action): TodoState {
   switch (action.type) {
@@ -55,6 +58,15 @@ function reducer(state: TodoState, action: Action): TodoState {
         )
       }
 
+    case 'SET_FILTER':
+      return { ...state, filterUser: action.payload }
+
+    case 'SET_SORT_UNCOMPLETED':
+      return { ...state, sortUncompleted: action.payload }
+
+    case 'SET_SORT_COMPLETED':
+      return { ...state, sortCompleted: action.payload }
+
     default:
       return state
   }
@@ -76,9 +88,18 @@ export function TodoProvider({ children }: { children: ReactNode }) {
         const todos = await fetchTodos()
         const users = await fetchUsers()
 
+        const now = Date.now()
+
+        const extraTodos = todos.map((todo, index) => ({
+          ...todo,
+          completedAt: todo.completed
+            ? new Date(now + index).toISOString()
+            : null
+        }))
+
         dispatch({
           type: 'SET_DATA',
-          payload: { todos, users }
+          payload: { todos: extraTodos, users }
         })
       } catch (error) {
         console.error('Failed to load data', error)

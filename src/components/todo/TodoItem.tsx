@@ -19,6 +19,10 @@ export function TodoItem({ todo }: Props){
             <button onClick={() => handleClick(todo.id)}>
                 {todo.completed ? 'Uncomplete' : 'Complete'}
             </button>
+
+            {todo.completedAt && (
+                <p>Completed at: {new Date(todo.completedAt).toLocaleString()}</p>
+            )}
         </div>
     )
 }

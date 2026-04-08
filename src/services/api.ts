@@ -18,7 +18,6 @@ export const fetchTodos = async (): Promise<Todo[]> => {
             return [];
         }
 
-        console.log('Fetched todos:', parsed.data);
         return parsed.data;
     } catch (error) {
         console.error('Error fetching todos:', error); 
@@ -43,7 +42,6 @@ export const fetchUsers = async (): Promise<User[]> => {
             return [];
         }
 
-        console.log('Fetched users:', parsed.data);
         return parsed.data;
 
     } catch (error) {
