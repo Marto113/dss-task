@@ -25,6 +25,10 @@ type Action =
       type: 'SET_DATA'
       payload: { todos: Todo[]; users: User[] }
     }
+  | {
+      type: 'TOGGLE_TODO'
+      payload: number
+      }
 
 function reducer(state: TodoState, action: Action): TodoState {
   switch (action.type) {
@@ -33,6 +37,22 @@ function reducer(state: TodoState, action: Action): TodoState {
         ...state,
         todos: action.payload.todos,
         users: action.payload.users
+      }
+
+    case 'TOGGLE_TODO':
+      return {
+        ...state,
+        todos: state.todos.map(todo =>
+          todo.id === action.payload
+            ? {
+                ...todo,
+                completed: !todo.completed,
+                completedAt: todo.completed
+                  ? null
+                  : new Date().toISOString()
+              }
+            : todo
+        )
       }
 
     default:

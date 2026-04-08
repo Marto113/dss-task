@@ -5,6 +5,6 @@ export function UncompletedTodos() {
     const { uncompleted } = useTodoSelectors()
 
     return (
-        <TodoList todos={uncompleted} />
+        <TodoList todos={uncompleted} title="Uncompleted"/>
     )   
 }

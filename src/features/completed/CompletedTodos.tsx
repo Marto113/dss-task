@@ -5,6 +5,6 @@ export function CompletedTodos() {
     const { completed } = useTodoSelectors()
 
     return (
-        <TodoList todos={completed} />
+        <TodoList todos={completed} title="Completed" />
     )   
 }

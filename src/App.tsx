@@ -9,7 +9,7 @@ function App() {
   console.log(state.users)
 
   return (
-    <div>
+    <div >
       <h1>Todo App</h1>
 
       {/* {state.todos.map(todo => (
@@ -33,8 +33,10 @@ function App() {
         </div>
       ))} */}
 
-      <UncompletedTodos />
-      <CompletedTodos />
+      <div className="todos">
+        <UncompletedTodos />
+        <CompletedTodos />
+      </div>
       
     </div>
   )
