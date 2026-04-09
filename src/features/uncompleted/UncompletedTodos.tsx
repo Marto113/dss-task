@@ -8,7 +8,7 @@ export function UncompletedTodos() {
     const [visible, setVisible] = useState(5);
 
     return (
-        <div className="todos--side">
+        <div className="todos__side left">
             <TodoList todos={uncompleted.slice(0, visible)} title="Uncompleted"/>
             <LoadMore
                 visible={visible}

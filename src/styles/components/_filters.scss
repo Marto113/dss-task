@@ -1,0 +1,39 @@
+@use '../abstracts/variables';
+
+.todos--filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 15%;
+    padding-right: 16px;
+
+    h3 {
+        font-size: 16px;
+        color: var(--text-primary);
+        margin: 8px 0;
+    }
+
+    select {
+        padding: 10px 16px;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            border-color: var(--accent-primary);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+  .todos--filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}

@@ -9,9 +9,9 @@ type Props = {
 export function TodoList({ todos, title }: Props) {
 
     return (
-        <div className="todos--list-container">
+        <div className="todos__list-container">
             <h2>{title}</h2>
-            <div className="todos--list-wrapper">
+            <div className="todos__list-wrapper">
                 <div className="todos--list">
                     {todos.map(todo => (
                         <TodoItem key={todo.id} todo={todo} />

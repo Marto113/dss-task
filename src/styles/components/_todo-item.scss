@@ -1,0 +1,65 @@
+@use '../abstracts/variables';
+
+.todos--list__item {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  h5 {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  button {
+    margin-top: 8px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &--completed {
+    button {
+      background: var(--surface);
+      color: var(--accent-warning);
+      border: 1px solid var(--accent-warning);
+  
+      &:hover {
+        background: var(--accent-warning);
+        color: var(--surface);
+        border: 1px solid var(--accent-warning);
+      }
+    }
+  }
+
+  &--uncompleted {
+    button {
+      background: var(--surface);
+      color: var(--accent-success);
+      border: 1px solid var(--accent-success);
+  
+      &:hover {
+        background: var(--accent-success);
+        color: var(--surface);
+        border: 1px solid var(--accent-success);
+      }
+    }
+  }
+}
