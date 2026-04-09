@@ -1,10 +1,20 @@
 import { useTodoSelectors } from '../../hooks/useTodoSelectors'
 import { TodoList } from '../../components/todo/TodoList'
+import { useState } from 'react';
+import { LoadMore } from '../../components/common/LoadMore';
 
 export function UncompletedTodos() {
     const { uncompleted } = useTodoSelectors()
+    const [visible, setVisible] = useState(5);
 
     return (
-        <TodoList todos={uncompleted} title="Uncompleted"/>
+        <div className="todos--side">
+            <TodoList todos={uncompleted.slice(0, visible)} title="Uncompleted"/>
+            <LoadMore
+                visible={visible}
+                total={uncompleted.length}
+                onLoadMore={() => setVisible(v => v + 10)}
+            />
+        </div>
     )   
 }

@@ -13,9 +13,13 @@ export function TodoItem({ todo }: Props){
     }
 
     return (
-        <div className="todos--list__item" id={todo.id.toString()}>
-            <h3>{todo.title}</h3>
-            <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
+        <div
+            className={`todos--list__item ${
+                todo.completed ? 'todos--list__item--completed' : 'todos--list__item--uncompleted'
+            }`}
+            id={todo.id.toString()}
+        >
+            <h5>{todo.title}</h5>
             <button onClick={() => handleClick(todo.id)}>
                 {todo.completed ? 'Uncomplete' : 'Complete'}
             </button>
