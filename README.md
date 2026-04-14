@@ -2,6 +2,10 @@
 
 This project is a React application built with Vite, TypeScript, and Sass.
 
+## Live demo
+
+https://dss-task-vozo-e1q2t7ejk-marto113s-projects.vercel.app/
+
 ## Prerequisites
 
 Before running the app locally, make sure you have:
