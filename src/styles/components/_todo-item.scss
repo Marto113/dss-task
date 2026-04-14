@@ -36,6 +36,13 @@
     }
   }
 
+  &--completed-at {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
   h5 {
     font-size: 15px;
     color: var(--text-primary);
@@ -61,9 +68,8 @@
       background: var(--accent-completed);
       color: var(--surface);
       border: 1px solid var(--accent-completed);
-  
+
       &:hover {
-        
         background: var(--accent-completed-hover);
         color: var(--surface);
         border: 1px solid var(--accent-completed-hover);
@@ -76,7 +82,7 @@
       background: var(--accent-uncompleted);
       color: var(--surface);
       border: 1px solid var(--accent-uncompleted);
-  
+
       &:hover {
         background: var(--accent-uncompleted-hover);
         color: var(--surface);

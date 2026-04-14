@@ -45,7 +45,7 @@
       border: 1px solid var(--accent-primary);
       cursor: pointer;
       transition: all 0.2s ease-in-out;
-  
+
       &:hover {
         background: var(--accent-primary-hover);
         color: var(--surface);
@@ -73,7 +73,6 @@
     background: linear-gradient(transparent, var(--bg));
   }
 }
-
 
 @media (max-width: 768px) {
   .todos {

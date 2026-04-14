@@ -1,11 +1,11 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
 export const UserSchema = z.object({
   id: z.number(),
   name: z.string(),
-  username: z.string()
-})
+  username: z.string(),
+});
 
-export const UserListSchema = z.array(UserSchema)
+export const UserListSchema = z.array(UserSchema);
 
-export type User = z.infer<typeof UserSchema>
+export type User = z.infer<typeof UserSchema>;
