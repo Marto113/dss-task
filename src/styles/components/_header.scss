@@ -1,0 +1,11 @@
+header {
+  margin: 8px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background-color: var(--accent-primary-soft);
+  color: var(--accent-primary);
+
+  h2 {
+    margin: 0;
+  }
+}

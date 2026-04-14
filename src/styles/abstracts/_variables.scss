@@ -12,14 +12,17 @@
   --border: #e5e7eb;
 
   // accents 
-  --accent-primary: #6c63ff;
-  --accent-primary-soft: rgba(108, 99, 255, 0.08);
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+  --accent-primary-soft: rgba(59, 130, 246, 0.08);
 
-  --accent-success: #2dd4bf;
-  --accent-success-soft: rgba(45, 212, 191, 0.1);
+  --accent-completed: #22c55e;
+  --accent-completed-hover: #16a34a;
+  --accent-completed-soft: rgba(34, 197, 94, 0.12);
 
-  --accent-warning: #f59e0b;
-  --accent-warning-soft: rgba(245, 158, 11, 0.1);
+  --accent-uncompleted: #64748b;
+  --accent-uncompleted-hover: #475569;
+  --accent-uncompleted-soft: rgba(100, 116, 139, 0.12);
 
   // shadows
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);

@@ -10,8 +10,8 @@ body {
 .app {
   display: flex;
   flex-direction: row;
-  margin: 16px;
-  max-height: calc(100vh - 32px);
+  margin: 8px;
+  height: calc(90vh - 16px);
 }
 
 @media (max-width: 1024px) {

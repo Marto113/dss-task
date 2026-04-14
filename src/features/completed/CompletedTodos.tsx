@@ -10,11 +10,18 @@ export function CompletedTodos() {
     return (
         <div className="todos__side right">
             <TodoList todos={completed.slice(0, visible)} title="Completed" />
-            <LoadMore
-                visible={visible}
-                total={completed.length}
-                onLoadMore={() => setVisible(v => v + 10)}
-            />
+            <div className="todos__list-controls">
+                {visible < completed.length ? (
+                    <span>Showing {visible} of {completed.length}</span>
+                ) : (
+                    <span>Showing all {completed.length} completed todos</span>
+                )}
+                <LoadMore
+                    visible={visible}
+                    total={completed.length}
+                    onLoadMore={() => setVisible(v => v + 10)}
+                />
+            </div>
         </div>
     )   
 }

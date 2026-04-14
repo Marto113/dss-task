@@ -3,7 +3,7 @@
 .todos {
   display: flex;
   width: 100%;
-  gap: 32px;
+  gap: 8px;
 
   &__side {
     flex: 1 1 0;
@@ -13,17 +13,17 @@
     border-radius: var(--radius);
 
     &.left {
-      background-color: var(--accent-success-soft);
+      background-color: var(--accent-uncompleted-soft);
 
       h2 {
-        color: var(--accent-success);
+        color: var(--accent-uncompleted);
       }
     }
 
     &.right {
-      background-color: var(--accent-warning-soft);
+      background-color: var(--accent-completed-soft);
       h2 {
-        color: var(--accent-warning);
+        color: var(--accent-completed);
       }
     }
   }
@@ -31,27 +31,36 @@
   &__list-wrapper {
     position: relative;
     overflow-y: auto;
-    height: 80vh;
+    height: 65vh;
   }
 
   &__list {
     &--load-more {
       display: block;
-      margin: 16px auto;
       padding: 8px 16px;
       border-radius: 8px;
-      background: var(--surface);
-      color: var(--accent-primary);
+
+      background: var(--accent-primary);
+      color: var(--surface);
       border: 1px solid var(--accent-primary);
       cursor: pointer;
       transition: all 0.2s ease-in-out;
   
       &:hover {
-        background: var(--accent-primary);
+        background: var(--accent-primary-hover);
         color: var(--surface);
-        border: 1px solid var(--accent-primary);
+        border: 1px solid var(--accent-primary-hover);
       }
     }
+  }
+
+  &__list-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    margin-top: 8px;
+    border-top: 1px solid var(--border-default);
   }
 
   &__fade {

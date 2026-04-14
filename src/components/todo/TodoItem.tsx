@@ -5,8 +5,16 @@ type Props = {
     todo: Todo
 }
 
+const getInitials = (name: string) => {
+  if (!name) return "";
+  const first = name[0][0];
+
+  return first.toUpperCase();
+};
+
 export function TodoItem({ todo }: Props){
-    const { dispatch } = useTodos() 
+    const { state, dispatch } = useTodos() 
+    const todoUser = state.users.find(user => user.id === todo.userId)
 
     function handleClick(todoId: number) {
         dispatch({ type: 'TOGGLE_TODO', payload: todoId })
@@ -19,7 +27,12 @@ export function TodoItem({ todo }: Props){
             }`}
             id={todo.id.toString()}
         >
-            <h5>{todo.title}</h5>
+            <div className="todos--list__item--header">
+                <h5>{todo.title}</h5>
+                <span className="todos--list__item--header__initials">
+                    {getInitials(todoUser?.username ?? '')}
+                </span>
+            </div>
             <button onClick={() => handleClick(todo.id)}>
                 {todo.completed ? 'Uncomplete' : 'Complete'}
             </button>

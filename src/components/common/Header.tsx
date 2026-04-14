@@ -1,0 +1,8 @@
+
+export function Header() {
+    return (
+        <header className="header">
+            <h2>Todo App</h2>
+        </header>
+    )
+}

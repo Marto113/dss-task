@@ -10,11 +10,18 @@ export function UncompletedTodos() {
     return (
         <div className="todos__side left">
             <TodoList todos={uncompleted.slice(0, visible)} title="Uncompleted"/>
-            <LoadMore
-                visible={visible}
-                total={uncompleted.length}
-                onLoadMore={() => setVisible(v => v + 10)}
-            />
+            <div className="todos__list-controls">
+                {visible < uncompleted.length ? (
+                    <span>Showing {visible} of {uncompleted.length}</span>
+                ) : (
+                    <span>Showing all {uncompleted.length} uncompleted todos</span>
+                )}
+                <LoadMore
+                    visible={visible}
+                    total={uncompleted.length}
+                    onLoadMore={() => setVisible(v => v + 10)}
+                />
+            </div>
         </div>
     )   
 }

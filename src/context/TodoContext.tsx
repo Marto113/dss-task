@@ -97,6 +97,9 @@ export function TodoProvider({ children }: { children: ReactNode }) {
             : null
         }))
 
+        console.log(todos);
+        console.log(users);
+
         dispatch({
           type: 'SET_DATA',
           payload: { todos: extraTodos, users }
